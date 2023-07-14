@@ -26,6 +26,8 @@ import ContentPlaceholder from "../components/ContentPlaceholder/ContentPlacehol
 import StickyNavbar from "../components/StickyNavbar/StickyNavbar.vue";
 import VerticalSlider from "../components/VerticalSlider/VerticalSlider.vue";
 import Notification from "../components/Notification/Notification.vue";
+import GithubProfiles from "../components/GithubProfiles/GithubProfiles.vue";
+import HeartClick from "../components/HeartClick/HeartClick.vue";
 
 const routes = [
   {
@@ -168,6 +170,16 @@ const routes = [
     path: "/notification",
     name: "notification",
     component: Notification,
+  },
+  {
+    path: "/github-profiles",
+    name: "github-profiles",
+    component: GithubProfiles,
+  },
+  {
+    path: "/heart-click",
+    name: "heart-click",
+    component: HeartClick,
   },
 ];
 
