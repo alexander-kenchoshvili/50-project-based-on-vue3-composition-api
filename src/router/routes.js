@@ -28,6 +28,7 @@ import VerticalSlider from "../components/VerticalSlider/VerticalSlider.vue";
 import Notification from "../components/Notification/Notification.vue";
 import GithubProfiles from "../components/GithubProfiles/GithubProfiles.vue";
 import HeartClick from "../components/HeartClick/HeartClick.vue";
+import AutoText from "../components/AutoText/AutoText.vue";
 
 const routes = [
   {
@@ -180,6 +181,11 @@ const routes = [
     path: "/heart-click",
     name: "heart-click",
     component: HeartClick,
+  },
+  {
+    path: "/auto-text",
+    name: "auto-text",
+    component: AutoText,
   },
 ];
 
