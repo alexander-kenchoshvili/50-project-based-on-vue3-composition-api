@@ -21,6 +21,7 @@ const getUserInfo = async () => {
   } catch (err) {
     if (err.response.status == 404) {
       showError.value = true;
+      username.value = "";
     }
   }
 };
