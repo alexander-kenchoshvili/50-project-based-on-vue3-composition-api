@@ -29,6 +29,7 @@ import Notification from "../components/Notification/Notification.vue";
 import GithubProfiles from "../components/GithubProfiles/GithubProfiles.vue";
 import HeartClick from "../components/HeartClick/HeartClick.vue";
 import AutoText from "../components/AutoText/AutoText.vue";
+import PasswordGenerator from "../components/PasswordGenerator/PasswordGenerator.vue";
 
 const routes = [
   {
@@ -186,6 +187,11 @@ const routes = [
     path: "/auto-text",
     name: "auto-text",
     component: AutoText,
+  },
+  {
+    path: "/password-generator",
+    name: "password-generator",
+    component: PasswordGenerator,
   },
 ];
 
