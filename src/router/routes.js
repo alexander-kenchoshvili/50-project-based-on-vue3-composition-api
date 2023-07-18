@@ -30,6 +30,7 @@ import GithubProfiles from "../components/GithubProfiles/GithubProfiles.vue";
 import HeartClick from "../components/HeartClick/HeartClick.vue";
 import AutoText from "../components/AutoText/AutoText.vue";
 import PasswordGenerator from "../components/PasswordGenerator/PasswordGenerator.vue";
+import GoodCheepFast from "../components/GoodCheepFast/GoodCheepFast.vue";
 
 const routes = [
   {
@@ -192,6 +193,11 @@ const routes = [
     path: "/password-generator",
     name: "password-generator",
     component: PasswordGenerator,
+  },
+  {
+    path: "/good-cheep-fast",
+    name: "good-cheep-fast",
+    component: GoodCheepFast,
   },
 ];
 
