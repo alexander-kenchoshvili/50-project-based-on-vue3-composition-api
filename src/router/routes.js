@@ -31,6 +31,7 @@ import HeartClick from "../components/HeartClick/HeartClick.vue";
 import AutoText from "../components/AutoText/AutoText.vue";
 import PasswordGenerator from "../components/PasswordGenerator/PasswordGenerator.vue";
 import GoodCheepFast from "../components/GoodCheepFast/GoodCheepFast.vue";
+import NoteApp from "../components/NoteApp/NoteApp.vue";
 
 const routes = [
   {
@@ -198,6 +199,11 @@ const routes = [
     path: "/good-cheep-fast",
     name: "good-cheep-fast",
     component: GoodCheepFast,
+  },
+  {
+    path: "/note-app",
+    name: "note-app",
+    component: NoteApp,
   },
 ];
 

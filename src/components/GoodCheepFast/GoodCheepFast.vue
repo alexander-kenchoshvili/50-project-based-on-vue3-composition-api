@@ -11,6 +11,9 @@ watch([good, cheap, fast], () => {
   if (cheap.value) {
     fast.value = false;
   }
+  if (fast.value) {
+    cheap.value = false;
+  }
 });
 </script>
 
