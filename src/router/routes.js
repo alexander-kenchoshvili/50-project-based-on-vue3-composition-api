@@ -34,6 +34,7 @@ import GoodCheepFast from "../components/GoodCheepFast/GoodCheepFast.vue";
 import NoteApp from "../components/NoteApp/NoteApp.vue";
 import AnimatedCountdown from "../components/AnimatedCountdown/AnimatedCountdown.vue";
 import ImageCarousel from "../components/ImageCarousel/ImageCarousel.vue";
+import Hoverboard from "../components/Hoverboard/Hoverboard.vue";
 
 const routes = [
   {
@@ -216,6 +217,11 @@ const routes = [
     path: "/image-carousel",
     name: "image-carousel",
     component: ImageCarousel,
+  },
+  {
+    path: "/hoverboard",
+    name: "hoverboard",
+    component: Hoverboard,
   },
 ];
 
