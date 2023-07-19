@@ -32,6 +32,8 @@ import AutoText from "../components/AutoText/AutoText.vue";
 import PasswordGenerator from "../components/PasswordGenerator/PasswordGenerator.vue";
 import GoodCheepFast from "../components/GoodCheepFast/GoodCheepFast.vue";
 import NoteApp from "../components/NoteApp/NoteApp.vue";
+import AnimatedCountdown from "../components/AnimatedCountdown/AnimatedCountdown.vue";
+import ImageCarousel from "../components/ImageCarousel/ImageCarousel.vue";
 
 const routes = [
   {
@@ -204,6 +206,16 @@ const routes = [
     path: "/note-app",
     name: "note-app",
     component: NoteApp,
+  },
+  {
+    path: "/animated-countdown",
+    name: "animated-countdown",
+    component: AnimatedCountdown,
+  },
+  {
+    path: "/image-carousel",
+    name: "image-carousel",
+    component: ImageCarousel,
   },
 ];
 
