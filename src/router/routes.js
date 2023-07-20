@@ -36,6 +36,7 @@ import AnimatedCountdown from "../components/AnimatedCountdown/AnimatedCountdown
 import ImageCarousel from "../components/ImageCarousel/ImageCarousel.vue";
 import Hoverboard from "../components/Hoverboard/Hoverboard.vue";
 import Pokemons from "../components/Pokemons/Pokemons.vue";
+import MobileTab from "../components/MobileTab/MobileTab.vue";
 
 const routes = [
   {
@@ -228,6 +229,11 @@ const routes = [
     path: "/pokemons",
     name: "pokemons",
     component: Pokemons,
+  },
+  {
+    path: "/mobile-tab",
+    name: "mobile-tab",
+    component: MobileTab,
   },
 ];
 
