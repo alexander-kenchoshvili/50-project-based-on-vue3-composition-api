@@ -35,6 +35,7 @@ import NoteApp from "../components/NoteApp/NoteApp.vue";
 import AnimatedCountdown from "../components/AnimatedCountdown/AnimatedCountdown.vue";
 import ImageCarousel from "../components/ImageCarousel/ImageCarousel.vue";
 import Hoverboard from "../components/Hoverboard/Hoverboard.vue";
+import Pokemons from "../components/Pokemons/Pokemons.vue";
 
 const routes = [
   {
@@ -222,6 +223,11 @@ const routes = [
     path: "/hoverboard",
     name: "hoverboard",
     component: Hoverboard,
+  },
+  {
+    path: "/pokemons",
+    name: "pokemons",
+    component: Pokemons,
   },
 ];
 
