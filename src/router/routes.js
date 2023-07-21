@@ -39,6 +39,7 @@ import Pokemons from "../components/Pokemons/Pokemons.vue";
 import MobileTab from "../components/MobileTab/MobileTab.vue";
 import PasswordStrength from "../components/PasswordStrength/PasswordStrength.vue";
 import BackgroundBoxes from "../components/BackgroundBoxes/BackgroundBoxes.vue";
+import VerifyAccount from "../components/VerifyAccount/VerifyAccount.vue";
 
 const routes = [
   {
@@ -246,6 +247,11 @@ const routes = [
     path: "/background-boxes",
     name: "background-boxes",
     component: BackgroundBoxes,
+  },
+  {
+    path: "/verify-account",
+    name: "verify-account",
+    component: VerifyAccount,
   },
 ];
 
