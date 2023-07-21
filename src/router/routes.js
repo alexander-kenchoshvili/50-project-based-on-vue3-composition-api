@@ -37,6 +37,8 @@ import ImageCarousel from "../components/ImageCarousel/ImageCarousel.vue";
 import Hoverboard from "../components/Hoverboard/Hoverboard.vue";
 import Pokemons from "../components/Pokemons/Pokemons.vue";
 import MobileTab from "../components/MobileTab/MobileTab.vue";
+import PasswordStrength from "../components/PasswordStrength/PasswordStrength.vue";
+import BackgroundBoxes from "../components/BackgroundBoxes/BackgroundBoxes.vue";
 
 const routes = [
   {
@@ -234,6 +236,16 @@ const routes = [
     path: "/mobile-tab",
     name: "mobile-tab",
     component: MobileTab,
+  },
+  {
+    path: "/password-strength",
+    name: "password-strength",
+    component: PasswordStrength,
+  },
+  {
+    path: "/background-boxes",
+    name: "background-boxes",
+    component: BackgroundBoxes,
   },
 ];
 

@@ -44,8 +44,6 @@ const photos = [
   },
 ];
 
-console.log(navigation);
-
 const handleClick = (index) => {
   activeIndex.value = index;
 };
