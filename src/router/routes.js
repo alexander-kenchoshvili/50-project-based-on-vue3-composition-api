@@ -41,6 +41,7 @@ import PasswordStrength from "../components/PasswordStrength/PasswordStrength.vu
 import BackgroundBoxes from "../components/BackgroundBoxes/BackgroundBoxes.vue";
 import VerifyAccount from "../components/VerifyAccount/VerifyAccount.vue";
 import UserFilter from "../components/Userfilter/UserFilter.vue";
+import FeedBack from "../components/Feedback/Feedback.vue";
 
 const routes = [
   {
@@ -258,6 +259,11 @@ const routes = [
     path: "/user-filter",
     name: "user-filter",
     component: UserFilter,
+  },
+  {
+    path: "/feedback",
+    name: "feedback",
+    component: FeedBack,
   },
 ];
 
