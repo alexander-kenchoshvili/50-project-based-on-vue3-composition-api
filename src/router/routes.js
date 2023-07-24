@@ -40,6 +40,7 @@ import MobileTab from "../components/MobileTab/MobileTab.vue";
 import PasswordStrength from "../components/PasswordStrength/PasswordStrength.vue";
 import BackgroundBoxes from "../components/BackgroundBoxes/BackgroundBoxes.vue";
 import VerifyAccount from "../components/VerifyAccount/VerifyAccount.vue";
+import UserFilter from "../components/Userfilter/UserFilter.vue";
 
 const routes = [
   {
@@ -252,6 +253,11 @@ const routes = [
     path: "/verify-account",
     name: "verify-account",
     component: VerifyAccount,
+  },
+  {
+    path: "/user-filter",
+    name: "user-filter",
+    component: UserFilter,
   },
 ];
 
