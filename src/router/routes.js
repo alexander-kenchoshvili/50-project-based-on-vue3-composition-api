@@ -42,6 +42,7 @@ import BackgroundBoxes from "../components/BackgroundBoxes/BackgroundBoxes.vue";
 import VerifyAccount from "../components/VerifyAccount/VerifyAccount.vue";
 import UserFilter from "../components/Userfilter/UserFilter.vue";
 import FeedBack from "../components/Feedback/Feedback.vue";
+import RangeSlider from "../components/RangeSlider/RangeSlider.vue";
 
 const routes = [
   {
@@ -264,6 +265,11 @@ const routes = [
     path: "/feedback",
     name: "feedback",
     component: FeedBack,
+  },
+  {
+    path: "/range-slider",
+    name: "range-slider",
+    component: RangeSlider,
   },
 ];
 
