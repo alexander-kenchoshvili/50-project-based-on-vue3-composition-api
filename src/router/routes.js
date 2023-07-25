@@ -47,6 +47,8 @@ import NetflixNav from "../components/NetflixNav/NetflixNav.vue";
 import QuizApp from "../components/QuizApp/QuizApp.vue";
 import TestimonialBox from "../components/TestimonialBox/TestimonialBox.vue";
 import RandomImage from "../components/RandomImage/RandomImage.vue";
+import ToDo from "../components/ToDo/ToDo.vue";
+import CatchInsect from "../components/CatchInsect/CatchInsect.vue";
 const routes = [
   {
     path: "/",
@@ -293,6 +295,16 @@ const routes = [
     path: "/random-image",
     name: "random-image",
     component: RandomImage,
+  },
+  {
+    path: "/todo",
+    name: "todo",
+    component: ToDo,
+  },
+  {
+    path: "/catch-insect",
+    name: "catch-insect",
+    component: CatchInsect,
   },
 ];
 
