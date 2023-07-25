@@ -43,6 +43,8 @@ import VerifyAccount from "../components/VerifyAccount/VerifyAccount.vue";
 import UserFilter from "../components/Userfilter/UserFilter.vue";
 import FeedBack from "../components/Feedback/Feedback.vue";
 import RangeSlider from "../components/RangeSlider/RangeSlider.vue";
+import NetflixNav from "../components/NetflixNav/NetflixNav.vue";
+import QuizApp from "../components/QuizApp/QuizApp.vue";
 
 const routes = [
   {
@@ -270,6 +272,16 @@ const routes = [
     path: "/range-slider",
     name: "range-slider",
     component: RangeSlider,
+  },
+  {
+    path: "/netflix-nav",
+    name: "Netflix-Nav",
+    component: NetflixNav,
+  },
+  {
+    path: "/quiz-app",
+    name: "quiz-app",
+    component: QuizApp,
   },
 ];
 
