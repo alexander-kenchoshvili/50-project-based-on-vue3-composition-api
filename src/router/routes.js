@@ -45,6 +45,7 @@ import FeedBack from "../components/Feedback/Feedback.vue";
 import RangeSlider from "../components/RangeSlider/RangeSlider.vue";
 import NetflixNav from "../components/NetflixNav/NetflixNav.vue";
 import QuizApp from "../components/QuizApp/QuizApp.vue";
+import TestimonialBox from "../components/TestimonialBox/TestimonialBox.vue";
 
 const routes = [
   {
@@ -282,6 +283,11 @@ const routes = [
     path: "/quiz-app",
     name: "quiz-app",
     component: QuizApp,
+  },
+  {
+    path: "/testimonial-box",
+    name: "testimonial-box",
+    component: TestimonialBox,
   },
 ];
 
