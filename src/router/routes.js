@@ -46,7 +46,7 @@ import RangeSlider from "../components/RangeSlider/RangeSlider.vue";
 import NetflixNav from "../components/NetflixNav/NetflixNav.vue";
 import QuizApp from "../components/QuizApp/QuizApp.vue";
 import TestimonialBox from "../components/TestimonialBox/TestimonialBox.vue";
-
+import RandomImage from "../components/RandomImage/RandomImage.vue";
 const routes = [
   {
     path: "/",
@@ -288,6 +288,11 @@ const routes = [
     path: "/testimonial-box",
     name: "testimonial-box",
     component: TestimonialBox,
+  },
+  {
+    path: "/random-image",
+    name: "random-image",
+    component: RandomImage,
   },
 ];
 
