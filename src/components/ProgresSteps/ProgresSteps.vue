@@ -31,10 +31,14 @@ const prevClick = () => {
     <div class="progres-bar__wrapper">
       <div class="progres-bar__container">
         <div class="progres-bar__navigation" :style="{ width: `${width}%` }"></div>
-        <div class="progres-bar__circle" :class="{ active: activeIndex >= 1 }">1</div>
-        <div class="progres-bar__circle" :class="{ active: activeIndex >= 2 }">2</div>
-        <div class="progres-bar__circle" :class="{ active: activeIndex >= 3 }">3</div>
-        <div class="progres-bar__circle" :class="{ active: activeIndex >= 4 }">4</div>
+        <div
+          v-for="(item, index) in 4"
+          :key="index"
+          class="progres-bar__circle"
+          :class="{ active: activeIndex >= index + 1 }"
+        >
+          {{ index + 1 }}
+        </div>
       </div>
       <button
         class="progres-bar__btn"

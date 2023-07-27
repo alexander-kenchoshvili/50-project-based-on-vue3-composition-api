@@ -1,20 +1,7 @@
 <script setup>
-import { onMounted, ref } from "vue";
-const labels = ref([]);
-const emailLabel = ref(null);
-const passwordLabel = ref(null);
-onMounted(() => {
-  labels.value.push(emailLabel.value, passwordLabel.value);
-  labels.value.forEach((label) => {
-    label.innerHTML = label.innerText
-      .split("")
-      .map(
-        (letter, index) =>
-          `<span style="transition-delay:${index * 50}ms" >${letter}</span>`
-      )
-      .join("");
-  });
-});
+import { ref } from "vue";
+const email = ref("Email");
+const password = ref("Password");
 </script>
 
 <template>
@@ -24,14 +11,33 @@ onMounted(() => {
       <div class="form-wave__form-control">
         <div class="form-wave__input-wrapper">
           <input type="text" />
-          <label ref="emailLabel" class="form-wave__label">Email</label>
+          <label class="form-wave__label">
+            <transition-group name="label-animation">
+              <span
+                v-for="(letter, index) in email.split('')"
+                :key="index"
+                :style="{ 'transition-delay': index * 50 + 'ms' }"
+                >{{ letter }}
+              </span>
+            </transition-group>
+          </label>
         </div>
         <div class="form-wave__input-wrapper">
           <input type="password" />
-          <label ref="passwordLabel" class="form-wave__label">Password</label>
+          <label class="form-wave__label">
+            <transition-group name="label-animation">
+              <span
+                v-for="(letter, index) in password.split('')"
+                :key="index"
+                :style="{ 'transition-delay': index * 50 + 'ms' }"
+              >
+                {{ letter }}
+              </span>
+            </transition-group>
+          </label>
         </div>
         <button class="form-wave__submit">Login</button>
-        <p class="form-wave__text">Dont't have an account? <a href="#">Register</a></p>
+        <p class="form-wave__text">Don't have an account? <a href="#">Register</a></p>
       </div>
     </div>
   </div>
@@ -111,5 +117,14 @@ onMounted(() => {
       transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     }
   }
+}
+.label-animation-enter-active,
+.label-animation-leave-active {
+  transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.label-animation-enter-from,
+.label-animation-leave-to {
+  opacity: 0;
+  transform: translateY(-30px);
 }
 </style>

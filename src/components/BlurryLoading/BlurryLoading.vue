@@ -1,6 +1,6 @@
 <script setup>
 import { ref, computed } from "vue";
-let load = ref(0);
+const load = ref(0);
 
 const blurring = () => {
   load.value++;
