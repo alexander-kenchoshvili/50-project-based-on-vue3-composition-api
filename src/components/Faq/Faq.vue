@@ -42,8 +42,10 @@ const handleClose = (id) => {
 <style lang="scss">
 .faq {
   background-color: #f0f0f0;
+  height: 100vh;
+  padding: 50px 0 30px;
+
   h1 {
-    margin: 50px 0 30px;
     text-align: center;
   }
   &__wrapper {

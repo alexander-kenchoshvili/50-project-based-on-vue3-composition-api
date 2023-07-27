@@ -1,9 +1,10 @@
 <script setup>
-import { onMounted, ref, watch } from "vue";
+import { ref, watch } from "vue";
 
 const textarea = ref(null);
 const text = ref("");
 const tags = ref(null);
+const tag = ref(null);
 
 watch([text], () => {
   tags.value = text.value
@@ -12,12 +13,10 @@ watch([text], () => {
     .map((tag) => tag.trim());
 });
 const enterHandler = (event) => {
-  if (event.key === "Enter") {
-    setTimeout(() => {
-      event.target.value = "";
-    }, 10);
-    randomSelect();
-  }
+  setTimeout(() => {
+    event.target.value = "";
+  }, 10);
+  randomSelect();
 };
 
 const randomSelect = () => {
@@ -38,8 +37,7 @@ const randomSelect = () => {
   }, times * 100);
 };
 const pickRandomTag = () => {
-  const tags = document.querySelectorAll(".random__tag");
-  return tags[Math.floor(Math.random() * tags.length)];
+  return tag.value[Math.floor(Math.random() * tag.value.length)];
 };
 
 const highlightTag = (tag) => {
@@ -49,9 +47,6 @@ const highlightTag = (tag) => {
 const unHighlightTag = (tag) => {
   tag.classList.remove("highlight");
 };
-onMounted(() => {
-  textarea.value.addEventListener("keyup", enterHandler);
-});
 </script>
 
 <template>
@@ -66,10 +61,11 @@ onMounted(() => {
         v-model="text"
         class="random__text"
         placeholder="Enter choices here ..."
+        @keyup.enter="enterHandler"
       >
       </textarea>
       <div class="random__tags">
-        <span v-for="tag in tags" class="random__tag">{{ tag }}</span>
+        <span v-for="tagText in tags" ref="tag" class="random__tag">{{ tagText }}</span>
       </div>
     </div>
   </div>
@@ -99,6 +95,7 @@ onMounted(() => {
     padding: 10px;
     margin: 0 0 20px;
     font-size: 16px;
+    outline: none;
   }
   &__tag {
     background-color: #f0932b;
