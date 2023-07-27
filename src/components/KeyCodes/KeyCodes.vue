@@ -1,31 +1,49 @@
 <script setup>
-import { onMounted, ref } from "vue";
-const insert = ref(null);
+import { reactive, onMounted, onBeforeUnmount, ref } from "vue";
+const keyInfo = reactive({
+  eKey: "",
+  ekeyCode: "",
+  eCode: "",
+});
+
+const showKeycodes = ref(false);
+
+const onKeydown = (e) => {
+  if (keyInfo) {
+    keyInfo.eKey = e.key;
+    keyInfo.ekeyCode = e.keyCode;
+    keyInfo.eCode = e.code;
+    showKeycodes.value = true;
+  }
+};
 
 onMounted(() => {
-  window.addEventListener("keydown", (e) => {
-    insert.value.innerHTML = `
-    <div class="keycodes__keycode">
-        ${e.key === " " ? "Space" : e.key}
-        <small>event.key</small>
-      </div>
-      <div class="keycodes__keycode">
-        ${e.keyCode}
-        <small>event.keyCode</small>
-      </div>
-      <div class="keycodes__keycode">
-        ${e.code}
-        <small>event.code</small>
-      </div>
-      `;
-  });
+  window.addEventListener("keydown", onKeydown);
+});
+
+onBeforeUnmount(() => {
+  window.removeEventListener("keydown", onKeydown);
 });
 </script>
 
 <template>
   <div class="keycodes">
-    <div ref="insert" class="keycodes__wrapper">
-      <div class="keycodes__keycode">Press any key to get the keyCode and code</div>
+    <div class="keycodes__wrapper">
+      <div v-if="!showKeycodes" class="keycodes__keycode">
+        Press any key to get the keyCode and code
+      </div>
+      <div v-if="showKeycodes" class="keycodes__keycode">
+        {{ keyInfo.eKey === " " ? "Space" : keyInfo.eKey }}
+        <small>event.key</small>
+      </div>
+      <div v-if="showKeycodes" class="keycodes__keycode">
+        {{ keyInfo.ekeyCode }}
+        <small>event.keyCode</small>
+      </div>
+      <div v-if="showKeycodes" class="keycodes__keycode">
+        {{ keyInfo.eCode }}
+        <small>event.code</small>
+      </div>
     </div>
   </div>
 </template>
