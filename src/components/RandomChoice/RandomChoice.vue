@@ -5,6 +5,7 @@ const textarea = ref(null);
 const text = ref("");
 const tags = ref(null);
 const tag = ref(null);
+const randomNum = ref();
 
 watch([text], () => {
   tags.value = text.value
@@ -23,7 +24,7 @@ const randomSelect = () => {
   const times = 30;
   const interval = setInterval(() => {
     const randomTag = pickRandomTag();
-    highlightTag(randomTag);
+    highlightTag(randomTag, randomNum.value);
     setTimeout(() => {
       unHighlightTag(randomTag);
     }, 100);
@@ -37,10 +38,11 @@ const randomSelect = () => {
   }, times * 100);
 };
 const pickRandomTag = () => {
-  return tag.value[Math.floor(Math.random() * tag.value.length)];
+  randomNum.value = Math.floor(Math.random() * tag.value.length);
+  return tag.value[randomNum.value];
 };
 
-const highlightTag = (tag) => {
+const highlightTag = (tag, num) => {
   tag.classList.add("highlight");
 };
 
@@ -65,7 +67,9 @@ const unHighlightTag = (tag) => {
       >
       </textarea>
       <div class="random__tags">
-        <span v-for="tagText in tags" ref="tag" class="random__tag">{{ tagText }}</span>
+        <span v-for="(tagText, index) in tags" :key="index" ref="tag" class="random__tag"
+          >{{ tagText }}
+        </span>
       </div>
     </div>
   </div>

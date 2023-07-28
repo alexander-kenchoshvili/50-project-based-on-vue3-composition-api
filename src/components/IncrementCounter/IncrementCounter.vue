@@ -1,45 +1,36 @@
 <script setup>
-import Twitter from "./SVG/Twitter.vue";
-import Youtube from "./SVG/Youtube.vue";
-import Facebook from "./SVG/Facebook.vue";
-import { onMounted } from "vue";
+import { onMounted, ref } from "vue";
+import { incData } from "./incData";
+const count = ref([0, 0, 0]);
 
 onMounted(() => {
-  const counters = document.querySelectorAll(".increment-counter__number");
-  counters.forEach((counter) => {
-    counter.innerText = "0";
-    const updateCounter = () => {
-      const target = +counter.getAttribute("data-target");
-      const c = +counter.innerText;
-      const increment = target / 500;
-      if (c < target) {
-        counter.innerText = `${Math.ceil(c + increment)}`;
-        setTimeout(updateCounter, 1);
-      } else {
-        counter.innerText = target;
-      }
-    };
-    updateCounter();
-  });
+  if (incData) {
+    incData.forEach((data, i) => {
+      const updateCounter = () => {
+        const target = +data.target;
+        const increment = target / 500;
+
+        if (count.value[i] < target) {
+          count.value[i] = Math.ceil(count.value[i] + increment);
+          setTimeout(updateCounter, 1);
+        } else {
+          count.value[i] = target;
+        }
+      };
+      updateCounter();
+    });
+  }
 });
 </script>
 
 <template>
   <div class="increment-counter">
-    <div class="increment-counter__content">
-      <Twitter class="twitter" />
-      <div class="increment-counter__number" data-target="12000"></div>
-      <span>Twitter Followers</span>
-    </div>
-    <div class="increment-counter__content">
-      <Youtube class="youtube" />
-      <div class="increment-counter__number" data-target="5000"></div>
-      <span>Youtube Subscribers</span>
-    </div>
-    <div class="increment-counter__content">
-      <Facebook class="fb" />
-      <div class="increment-counter__number" data-target="7500"></div>
-      <span>Facebook fans</span>
+    <div v-for="(item, index) in incData" :key="index" class="increment-counter__content">
+      <component :is="item.icon" :class="item.class" />
+      <div class="increment-counter__number">
+        {{ count[index] }}
+      </div>
+      <span>{{ item.title }}</span>
     </div>
   </div>
 </template>
