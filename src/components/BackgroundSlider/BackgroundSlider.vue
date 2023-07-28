@@ -4,8 +4,6 @@ import RightArrow from "./SVG/RightArrow.vue";
 import { imgData } from "./imgData.js";
 import { ref } from "vue";
 
-const slider = ref(null);
-
 let activeSlide = ref(0);
 const incrementActiveSlide = () => {
   activeSlide.value++;
@@ -22,11 +20,7 @@ const decrementActiveSlide = () => {
 </script>
 
 <template>
-  <div
-    ref="slider"
-    :style="`background-image: url(${imgData[activeSlide].img})`"
-    class="slider"
-  >
+  <div :style="`background-image: url(${imgData[activeSlide].img})`" class="slider">
     <div class="slider__content">
       <div
         v-for="(data, index) in imgData"

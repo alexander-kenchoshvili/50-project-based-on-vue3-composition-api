@@ -1,12 +1,13 @@
 <script setup>
 import Clipboard from "./SVG/Clipboard.vue";
-import { ref, computed } from "vue";
+import { ref } from "vue";
 const lengthEl = ref(12);
 const lowercaseEl = ref(true);
 const uppercaseEl = ref(true);
 const numberEl = ref(true);
 const symbolEl = ref(true);
 const getPass = ref("");
+const showAlert = ref(false);
 
 const getRandomLower = () => String.fromCharCode(Math.floor(Math.random() * 26) + 97);
 const getRandomUpper = () => String.fromCharCode(Math.floor(Math.random() * 26) + 65);
@@ -48,15 +49,19 @@ const generatePassword = () => {
 };
 
 const copyToClipboard = () => {
-  console.log(navigator);
   navigator.clipboard
     .writeText(getPass.value)
     .then(() => {
       console.log("Password copied to clipboard");
+      if (getPass.value !== "") {
+        showAlert.value = true;
+      }
     })
     .catch((error) => {
       console.error("Failed to copy password to clipboard:", error);
     });
+
+  setTimeout(() => (showAlert.value = false), 1500);
 };
 </script>
 
@@ -69,6 +74,7 @@ const copyToClipboard = () => {
         <button class="pass-generator__btn" @click="copyToClipboard">
           <Clipboard />
         </button>
+        <div class="pass-generator__alert" :class="{ show: showAlert }">copied</div>
       </div>
       <div class="pass-generator__settings">
         <div class="pass-generator__setting">
@@ -168,6 +174,20 @@ const copyToClipboard = () => {
     justify-content: space-between;
     align-items: center;
     margin: 15px 0;
+  }
+  &__alert {
+    color: white;
+    position: absolute;
+    top: -28px;
+    right: -19px;
+    background-color: #3b3b98;
+    padding: 5px;
+    font-size: 12px;
+    transform: scale(0);
+    transition: 0.5s ease-in-out;
+    &.show {
+      transform: scale(1);
+    }
   }
 }
 </style>
